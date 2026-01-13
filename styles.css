@@ -1,13 +1,17 @@
-/* ===== CSS Variables ===== */
 :root {
-  --bg-primary: #0f1419;
-  --bg-secondary: #1a1f2e;
-  --bg-card: #242938;
-  --text-primary: #e7e9ea;
-  --text-secondary: #8b949e;
-  --accent: #6366f1;
-  --accent-hover: #818cf8;
-  --border: #30363d;
+  --bg-primary: #fcf9f2;
+  /* Washi-like off-white */
+  --bg-secondary: #f2efe6;
+  /* Slightly darker sidebar */
+  --bg-card: #ffffff;
+  /* Clean white for cards */
+  --text-primary: #333333;
+  /* Dark gray for readability */
+  --text-secondary: #5a5a5a;
+  --accent: #a33e36;
+  /* Traditional Japanese Red (Benikaba-like) */
+  --accent-hover: #c4554d;
+  --border: #e6e2d8;
   --sidebar-width: 280px;
 }
 
@@ -297,63 +301,69 @@ th {
 
 /* Sales Letter Styles */
 .sales-letter-head {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518531933037-9a847e0f3886?fit=crop&w=1600&h=900') no-repeat center center;
+  background: linear-gradient(rgba(252, 249, 242, 0.85), rgba(252, 249, 242, 0.95)), url('https://images.unsplash.com/photo-1518531933037-9a847e0f3886?fit=crop&w=1600&h=900') no-repeat center center;
   background-size: cover;
   padding: 60px 20px;
   margin: -40px -40px 40px -40px;
   text-align: center;
   border-radius: 0 0 20px 20px;
+  border-bottom: 3px solid var(--accent);
 }
 
 .sales-letter-head h1 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 2.2rem;
   margin-bottom: 20px;
   line-height: 1.4;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .sales-letter-head p {
-  color: #e0e0e0;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
+  font-weight: 500;
 }
 
 .highlight-box {
-  background-color: rgba(66, 153, 225, 0.1);
-  border: 1px solid var(--accent-light);
+  background-color: #fffbf0;
+  /* Warm paper tint */
+  border: 2px solid var(--accent);
   border-radius: 12px;
   padding: 24px;
   margin: 30px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .testimonial-box {
-  background-color: var(--card-bg);
-  border-left: 4px solid var(--accent-color);
+  background-color: var(--bg-card);
+  border-left: 4px solid var(--accent);
   padding: 20px;
   margin: 20px 0;
   border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .price-display {
   text-align: center;
   margin: 40px 0;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.05);
-  /* Slightly lighter than card-bg */
+  background-color: #fff;
   border-radius: 16px;
-  border: 2px solid var(--accent-color);
+  border: 3px double var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .old-price {
   text-decoration: line-through;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 1.2rem;
 }
 
 .new-price {
-  color: #FF6B6B;
+  color: #d3381c;
+  /* Traditional Vermilion */
   /* Red-ish accent for price */
   font-size: 2.5rem;
   font-weight: 700;
@@ -366,25 +376,25 @@ th {
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
-  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  background: linear-gradient(135deg, #a33e36, #cf5a50);
   color: white;
   text-align: center;
   font-weight: bold;
   font-size: 1.3rem;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 10px 20px rgba(163, 62, 54, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 15px 30px rgba(163, 62, 54, 0.4);
 }
 
 .guarantee-badge {
   text-align: center;
   margin-top: 10px;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
