@@ -167,7 +167,8 @@ body {
   margin: 32px 0;
 }
 
-.mail-body ul, .mail-body ol {
+.mail-body ul,
+.mail-body ol {
   margin: 16px 0;
   padding-left: 24px;
 }
@@ -248,7 +249,8 @@ table {
   margin: 16px 0;
 }
 
-th, td {
+th,
+td {
   padding: 12px 16px;
   text-align: left;
   border-bottom: 1px solid var(--border);
@@ -282,13 +284,107 @@ th {
     position: relative;
     height: auto;
   }
-  
+
   .main-content {
     margin-left: 0;
     padding: 24px;
   }
-  
+
   .container {
     flex-direction: column;
   }
+}
+
+/* Sales Letter Styles */
+.sales-letter-head {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518531933037-9a847e0f3886?fit=crop&w=1600&h=900') no-repeat center center;
+  background-size: cover;
+  padding: 60px 20px;
+  margin: -40px -40px 40px -40px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.sales-letter-head h1 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sales-letter-head p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight-box {
+  background-color: rgba(66, 153, 225, 0.1);
+  border: 1px solid var(--accent-light);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 30px 0;
+}
+
+.testimonial-box {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--accent-color);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.price-display {
+  text-align: center;
+  margin: 40px 0;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Slightly lighter than card-bg */
+  border-radius: 16px;
+  border: 2px solid var(--accent-color);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.new-price {
+  color: #FF6B6B;
+  /* Red-ish accent for price */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+}
+
+.guarantee-badge {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
