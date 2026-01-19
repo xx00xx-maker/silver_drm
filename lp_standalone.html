@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無料メール講座 - 脳若返りメソッド</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Washi Theme Variables */
+        :root {
+            --washi-bg: #fcf9f2;
+            --washi-white: #ffffff;
+            --washi-cream: #f2efe6;
+            --washi-text: #333333;
+            --washi-text-secondary: #5a5a5a;
+            --washi-accent-red: #d65c5c;
+            --washi-accent-brown: #8b6f47;
+            --washi-accent-yellow: #ffeaa7;
+            --washi-border: #e6e2d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--washi-bg);
+            color: var(--washi-text);
+            line-height: 1.8;
+        }
+
+        /* LP専用のスタイル */
+        .lp-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--washi-bg);
+        }
+
+        .lp-hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--washi-cream) 0%, var(--washi-white) 100%);
+            border-radius: 8px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .lp-hero h1 {
+            font-size: 2.2em;
+            line-height: 1.5;
+            color: var(--washi-text);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .lp-hero .subtitle {
+            font-size: 1.3em;
+            color: var(--washi-accent-brown);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .lp-hero .highlight {
+            display: inline-block;
+            background-color: var(--washi-accent-yellow);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .benefits-section {
+            margin: 60px 0;
+        }
+
+        .benefits-section h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--washi-text);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: var(--washi-white);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--washi-accent-red);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: var(--washi-accent-brown);
+        }
+
+        .benefit-card p {
+            line-height: 1.8;
+            color: var(--washi-text-secondary);
+        }
+
+        .form-section {
+            background: var(--washi-white);
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 60px 0;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--washi-text);
+        }
+
+        .form-section .form-intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--washi-text-secondary);
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--washi-text);
+            font-size: 1.1em;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 2px solid var(--washi-border);
+            border-radius: 6px;
+            transition: border-color 0.3s;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--washi-accent-red);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--washi-accent-red) 0%, #c44343 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(214, 92, 92, 0.3);
+        }
+
+        .privacy-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--washi-text-secondary);
+        }
+
+        .course-content {
+            margin: 60px 0;
+        }
+
+        .course-content h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--washi-text);
+        }
+
+        .email-list {
+            background: var(--washi-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .email-item {
+            padding: 20px;
+            border-bottom: 1px solid var(--washi-border);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .email-item:last-child {
+            border-bottom: none;
+        }
+
+        .email-day {
+            background: var(--washi-accent-red);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+            font-size: 0.9em;
+        }
+
+        .email-content h3 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: var(--washi-text);
+        }
+
+        .email-content p {
+            color: var(--washi-text-secondary);
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .testimonials {
+            margin: 60px 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--washi-text);
+        }
+
+        .testimonial-card {
+            background: var(--washi-white);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--washi-accent-yellow);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card .quote {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--washi-text);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-card .author {
+            text-align: right;
+            color: var(--washi-text-secondary);
+            font-weight: 500;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--washi-cream) 0%, var(--washi-white) 100%);
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+
+        .final-cta h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--washi-text);
+        }
+
+        .final-cta p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: var(--washi-text-secondary);
+        }
+
+        .checkmarks {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .checkmark-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+            color: var(--washi-text);
+        }
+
+        .checkmark-item::before {
+            content: "✓";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--washi-accent-red);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .lp-hero h1 {
+                font-size: 1.6em;
+            }
+
+            .lp-hero .subtitle {
+                font-size: 1.1em;
+            }
+
+            .form-section {
+                padding: 30px 20px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .email-day {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lp-container">
+        <!-- Hero Section -->
+        <div class="lp-hero">
+            <h1>不幸な「老害」扱いされ、<br>愛する孫や家族に避けられる<br>「孤独な未来」に、<br>今、ここで終止符を打ちませんか？</h1>
+            <p class="subtitle">
+                <span class="highlight">完全無料</span>のメール講座で、<br>
+                1日たった5分、90日で脳を若返らせ、<br>
+                「おじいちゃん/おばあちゃん、大好き！」と<br>
+                言われる温かい家族団欒を取り戻す方法
+            </p>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <h2>このメール講座で得られること</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>✓ 物忘れが減る</h3>
+                    <p>「あれ、それ」が減り、大切な人の名前や予定をしっかり覚えられるようになります。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✓ 感情がコントロールできる</h3>
+                    <p>つまらないことでイライラしなくなり、穏やかで優しい自分を取り戻せます。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✓ 会話が弾む</h3>
+                    <p>「また同じ話…」と言われなくなり、孫や家族との会話が楽しくなります。</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>✓ 頭がクリアになる</h3>
+                    <p>頭のモヤが晴れ、若い頃のようなキレのある思考が戻ってきます。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Registration Form -->
+        <div class="form-section">
+            <h2>無料メール講座に今すぐ登録</h2>
+            <p class="form-intro">
+                脳科学研究25年の田中健一郎が、<br>
+                脳を若返らせる方法を11日間のメールでお届けします。<br>
+                <strong>完全無料</strong>です。いつでも配信停止できます。
+            </p>
+            <form class="email-form" id="registration-form">
+                <div class="form-group">
+                    <label for="name">お名前（姓）</label>
+                    <input type="text" id="name" name="name" placeholder="例：田中" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" placeholder="例：example@email.com" required>
+                </div>
+                <button type="submit" class="submit-button">
+                    無料メール講座を受け取る
+                </button>
+                <p class="privacy-note">
+                    ※ご登録いただいたメールアドレスは厳重に管理し、<br>
+                    プライバシーポリシーに基づき適切に取り扱います。
+                </p>
+            </form>
+        </div>
+
+        <!-- Course Content -->
+        <div class="course-content">
+            <h2>11日間で学べる内容</h2>
+            <div class="email-list">
+                <div class="email-item">
+                    <div class="email-day">Day 1</div>
+                    <div class="email-content">
+                        <h3>孫に「また同じ話…」と言われた日</h3>
+                        <p>脳は何歳になっても若返らせることができる。その科学的根拠と希望のメッセージをお届けします。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 2</div>
+                    <div class="email-content">
+                        <h3>怒りっぽくなったのは、あなたのせいじゃない</h3>
+                        <p>なぜ年齢とともに物忘れや怒りっぽさが増えるのか？その根本原因を脳科学で解説します。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 3</div>
+                    <div class="email-content">
+                        <h3>【募集開始】脳が若返る90日間プログラム</h3>
+                        <p>1日5分、日常生活の中で脳を若返らせる「脳若返りメソッド」の全貌を公開します。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 4</div>
+                    <div class="email-content">
+                        <h3>「認知症になりたくない」あなたへ</h3>
+                        <p>認知症の不安を解消し、今日からできる予防法をお伝えします。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 5</div>
+                    <div class="email-content">
+                        <h3>【本日23:59終了】最後のご案内です</h3>
+                        <p>特別価格での募集終了前の最終案内。決断のための情報をお届けします。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 6</div>
+                    <div class="email-content">
+                        <h3>ありがとうございました（募集終了のお知らせ）</h3>
+                        <p>募集終了の報告と、これから始まる方々へのメッセージ。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 7</div>
+                    <div class="email-content">
+                        <h3>「孫が抱きついてきたんです」</h3>
+                        <p>プログラム実践者の驚きの成果報告をシェアします。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 8</div>
+                    <div class="email-content">
+                        <h3>「娘が泣きながら電話してきました」</h3>
+                        <p>家族との絆が戻った感動のストーリーをお届けします。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 9</div>
+                    <div class="email-content">
+                        <h3>【緊急】2日間だけ再募集します</h3>
+                        <p>参加できなかった方のための特別再募集のお知らせ。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 10</div>
+                    <div class="email-content">
+                        <h3>【本日終了】これが最後です</h3>
+                        <p>再募集の最終日。最後のチャンスについてお伝えします。</p>
+                    </div>
+                </div>
+                <div class="email-item">
+                    <div class="email-day">Day 11</div>
+                    <div class="email-content">
+                        <h3>感謝を込めて、これからも。</h3>
+                        <p>メール講座の締めくくりと、これからの継続的なサポートについて。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2>実践者の声</h2>
+            <div class="testimonial-card">
+                <p class="quote">「孫が毎週遊びに来るようになりました！以前は私が話すと露骨に嫌な顔をされていたのですが、このメソッドの会話術を試したところ、孫の方から話しかけてくるようになりました。今では週末が待ち遠しいです。」</p>
+                <p class="author">— 72歳 男性</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">「妻との喧嘩がなくなり、昔のように旅行に行けました。些細なことでイライラしていた自分が嘘のようです。感情コントロール法のおかげで、妻の言葉も穏やかに受け止められるようになりました。」</p>
+                <p class="author">— 68歳 男性</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">「買い物リストがなくても大丈夫！買い物に行っても何を買うか忘れてしまっていたのが、今では頭の中でリストを組み立てられます。頭がクリアになるって、こういうことなんですね。毎日が楽しいです。」</p>
+                <p class="author">— 70歳 女性</p>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>今日から、新しい未来を始めませんか？</h2>
+            <div class="checkmarks">
+                <div class="checkmark-item">完全無料のメール講座</div>
+                <div class="checkmark-item">1日5分から始められる</div>
+                <div class="checkmark-item">脳科学25年の研究に基づく</div>
+                <div class="checkmark-item">いつでも配信停止可能</div>
+            </div>
+            <p>
+                わずか3週間で頭のモヤが晴れ渡り、<br>
+                2週間で家族との会話に笑顔が戻り、<br>
+                90日後には、「年齢を感じさせない」<br>
+                聡明で穏やかなあなたへと生まれ変わる。
+            </p>
+            <form class="email-form" id="registration-form-2">
+                <div class="form-group">
+                    <label for="name2">お名前（姓）</label>
+                    <input type="text" id="name2" name="name" placeholder="例：田中" required>
+                </div>
+                <div class="form-group">
+                    <label for="email2">メールアドレス</label>
+                    <input type="email" id="email2" name="email" placeholder="例：example@email.com" required>
+                </div>
+                <button type="submit" class="submit-button">
+                    無料メール講座を受け取る
+                </button>
+                <p class="privacy-note">
+                    ※ご登録いただいたメールアドレスは厳重に管理し、<br>
+                    プライバシーポリシーに基づき適切に取り扱います。
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // フォーム送信のハンドリング（デモ用）
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            alert(`ご登録ありがとうございます！\n\nお名前: ${name}\nメールアドレス: ${email}\n\n※これはデモ画面です。実際の登録システムは別途実装が必要です。`);
+        });
+
+        document.getElementById('registration-form-2').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name2').value;
+            const email = document.getElementById('email2').value;
+            alert(`ご登録ありがとうございます！\n\nお名前: ${name}\nメールアドレス: ${email}\n\n※これはデモ画面です。実際の登録システムは別途実装が必要です。`);
+        });
+    </script>
+</body>
+
+</html>
